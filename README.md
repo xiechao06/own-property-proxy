@@ -67,11 +67,11 @@ let o = opp({...})
 o.inexistentProperty // throws exception
 o[opp.origin].inexistentProperty || defaultValue // get the default value
 ```
-or using [trappy](https://www.npmjs.com/package/trappy)
+or using [keep-try](https://www.npmjs.com/package/keep-try)
 
 ```javascript
-import trappy from 'trappy'
-let inexistentProperty = trappy(() => opp({}).inexistentProperty, fallbackValue)
+import keepTry from 'keep-try'
+let inexistentProperty = keepTry(() => opp({}).inexistentProperty, fallbackValue)
 ```
 
 ## Development
