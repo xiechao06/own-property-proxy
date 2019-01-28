@@ -33,9 +33,22 @@ in object `options`
 
 ## Usage
 
+### common js
+
+```javascript
+const opp = require('own-property-proxy').default
+```
+
+### esm
+
+```javascript
+import opp from 'own-property-proxy'
+```
+
+## An example
+
 ```javascript
 const assert = require('assert').strict
-const opp = require('own-property-proxy')
 
 let obj = {
   a: 1,
