@@ -3,15 +3,14 @@
   "version": "0.0.4",
   "description": "A small utility to get/set object's own property, if object has no required property, it complains loudly",
   "main": "dist/index.js",
-  "module": "index.js",
+  "module": "dist/index.mjs",
+  "source": "index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
     "test": "standard *.js && tape -r @babel/register test.js | tap-spec",
     "dev": "npm test; chokidar *.js -c \"tape -r @babel/register test.js | tap-spec\"",
-    "build": "npm run build-cjs && npm run build-browser && npm run build-browser-min",
-    "build-cjs": "parcel build index.js -t node --no-minify --no-source-maps",
-    "build-browser": "parcel build index.js -t browser --no-minify -o own-property-proxy.browser.js --global ownPropertyProxy",
-    "build-browser-min": "parcel build index.js -t browser -o own-property-proxy.browser.min.js --global ownPropertyProxy"
+    "build": "npm run clean && rollup -c",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -24,16 +23,22 @@
     "url": "https://github.com/xiechao06/own-property-proxy/issues"
   },
   "homepage": "https://github.com/xiechao06/own-property-proxy#readme",
-  "dependencies": {
-    "tap-spec": "^5.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
     "chokidar-cli": "^1.2.1",
-    "parcel": "^1.11.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "standard": "^12.0.1",
+    "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
   }
 }

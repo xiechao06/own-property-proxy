@@ -1,4 +1,4 @@
-import opp, { origin } from './index'
+import { ownPropertyProxy as opp, origin } from './index'
 import test from 'tape'
 
 test('basic', function (t) {

@@ -2,7 +2,7 @@ import util from 'util'
 
 export const origin = Symbol('origin')
 
-export default function ownPropertyProxy (o) {
+export function ownPropertyProxy (o) {
   return new Proxy(o, {
     get (obj, prop) {
       if (prop === origin) {

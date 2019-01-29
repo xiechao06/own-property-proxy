@@ -36,18 +36,19 @@ in object `options`
 ### common js
 
 ```javascript
-const opp = require('own-property-proxy').default
+const { ownPropertyProxy as opp, origin } = require('own-property-proxy')
 ```
 
 ### esm
 
 ```javascript
-import opp from 'own-property-proxy'
+import { ownPropertyProxy as opp, origin } from 'own-property-proxy'
 ```
 
 ## An example
 
 ```javascript
+const { ownPropertyProxy as opp, origin } = require('own-property-proxy')
 const assert = require('assert').strict
 
 let obj = {
