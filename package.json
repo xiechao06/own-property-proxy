@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/xiechao06/own-property-proxy#readme",
   "dependencies": {
+    "rollup-plugin-terser": "^4.0.4",
     "well-known-symbols": "^2.0.0"
   },
   "devDependencies": {
@@ -38,7 +39,6 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-uglify": "^6.0.2",
     "standard": "^12.0.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
