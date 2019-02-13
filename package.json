@@ -1,6 +1,6 @@
 {
   "name": "own-property-proxy",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A small utility to get/set object's own property, if object has no required property, it complains loudly",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
