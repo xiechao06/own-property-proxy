@@ -1,4 +1,5 @@
 import util from 'util'
+import wellKnownSymbols from 'well-known-symbols'
 
 export const origin = Symbol('origin')
 
@@ -19,6 +20,10 @@ export function ownPropertyProxy (o) {
         }
         return ret
       }
+      if (wellKnownSymbols.isWellKnown(prop)) {
+        return o[prop]
+      }
+
       throw new Error(o + ' has no such property: ' + prop)
     }
   })
